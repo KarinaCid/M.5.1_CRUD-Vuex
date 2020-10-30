@@ -9,7 +9,9 @@
 
  import {mapState, mapActions} from 'vuex'
 export default {
-   
+   props: ['beerId'],
+
+
      computed:{
     ...mapState(["currentBeer"]),
     
@@ -18,7 +20,7 @@ export default {
     ...mapActions(["setBeer"])
   },
   created(){
-    this.setBeer(this.$route.params.id)
+    this.setBeer(this.beerId)
   }
 };
 </script>
